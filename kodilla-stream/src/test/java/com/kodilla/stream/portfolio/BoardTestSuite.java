@@ -89,7 +89,7 @@ public class BoardTestSuite {
                 .map(n -> tasks2.get(n))
                 .average().getAsDouble();
         //Then
-        System.out.println(Math.abs(result));
+        assertEquals(10,Math.abs(result));
     }
 
 
