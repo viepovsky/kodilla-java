@@ -51,7 +51,7 @@ public class StatisticsCalculatorTestSuite {
     @Test
     public void testCalculateAdvStatistics0Posts(){
         //Given
-        StatisticsCalculator statisticsCalculator = new StatisticsCalculator(statisticsMock);
+        StatisticsCalculator statisticsCalculator = new StatisticsCalculator();
         when(statisticsMock.postsCount()).thenReturn(0);
         //When
         statisticsCalculator.calculateAdvStatistics(statisticsMock);
@@ -64,7 +64,7 @@ public class StatisticsCalculatorTestSuite {
     }
     @Test
     public void testCalculateAdvStatistics1000Posts(){
-        StatisticsCalculator statisticsCalculator = new StatisticsCalculator(statisticsMock);
+        StatisticsCalculator statisticsCalculator = new StatisticsCalculator();
         when(statisticsMock.postsCount()).thenReturn(1000);
         //When
         statisticsCalculator.calculateAdvStatistics(statisticsMock);
@@ -76,7 +76,7 @@ public class StatisticsCalculatorTestSuite {
     }
     @Test
     public void testCalculateAdvStatistics0Comments(){
-        StatisticsCalculator statisticsCalculator = new StatisticsCalculator(statisticsMock);
+        StatisticsCalculator statisticsCalculator = new StatisticsCalculator();
         when(statisticsMock.commentsCount()).thenReturn(0);
         //When
         statisticsCalculator.calculateAdvStatistics(statisticsMock);
@@ -88,7 +88,7 @@ public class StatisticsCalculatorTestSuite {
     }
     @Test
     public void testCalculateAdvStatisticsCommentsMoreThanPosts(){
-        StatisticsCalculator statisticsCalculator = new StatisticsCalculator(statisticsMock);
+        StatisticsCalculator statisticsCalculator = new StatisticsCalculator();
         when(statisticsMock.commentsCount()).thenReturn(200);
         //When
         statisticsCalculator.calculateAdvStatistics(statisticsMock);
@@ -100,7 +100,7 @@ public class StatisticsCalculatorTestSuite {
     }
     @Test
     public void testCalculateAdvStatisticsCommentsLessThanPosts(){
-        StatisticsCalculator statisticsCalculator = new StatisticsCalculator(statisticsMock);
+        StatisticsCalculator statisticsCalculator = new StatisticsCalculator();
         when(statisticsMock.postsCount()).thenReturn(200);
         //When
         statisticsCalculator.calculateAdvStatistics(statisticsMock);
@@ -112,7 +112,7 @@ public class StatisticsCalculatorTestSuite {
     }
     @Test
     public void testCalculateAdvStatistics0Users(){
-        StatisticsCalculator statisticsCalculator = new StatisticsCalculator(statisticsMock);
+        StatisticsCalculator statisticsCalculator = new StatisticsCalculator();
         List<String> usersList = new ArrayList<>();
         when(statisticsMock.usersNames()).thenReturn(usersList);
         //When
@@ -125,7 +125,7 @@ public class StatisticsCalculatorTestSuite {
     }
     @Test
     public void testCalculateAdvStatistics100Users(){
-        StatisticsCalculator statisticsCalculator = new StatisticsCalculator(statisticsMock);
+        StatisticsCalculator statisticsCalculator = new StatisticsCalculator();
         List<String> usersList = generateListOfNNames(100);
         when(statisticsMock.usersNames()).thenReturn(usersList);
         //When

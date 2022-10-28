@@ -4,16 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class StatisticsCalculator {
-    private Statistics statistics;
-
     private int numberOfUsers;
     private int postsCount;
     private int commentsCount;
     private double averagePostsPerUser;
     private double averageCommentsPerUser;
     private double averageCommentsPerPost;
-    public StatisticsCalculator(Statistics statistics){
-        this.statistics = statistics;
+    public StatisticsCalculator(){
     }
     public void calculateAdvStatistics(Statistics statistics){
         this.numberOfUsers = statistics.usersNames().size();
