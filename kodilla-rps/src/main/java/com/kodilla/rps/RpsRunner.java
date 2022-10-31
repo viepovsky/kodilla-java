@@ -34,7 +34,7 @@ public class RpsRunner {
                 newGame = false;
             }
             boolean decisionMade = false;
-            char playerDecision = '0'; //jak to zainicjowac bez niczego
+            char playerDecision = '5'; //jak to zainicjowac bez niczego
             while(!decisionMade && !newGame && !end){
                 playerDecision = rpsRunner.decisionOf5();
                 decisionMade = rpsRunner.checkDecisionOfWeapon(playerDecision);
