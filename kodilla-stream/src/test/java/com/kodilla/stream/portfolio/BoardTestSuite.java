@@ -82,7 +82,8 @@ public class BoardTestSuite {
                 .filter(inProgressTasks::contains)
                 .flatMap(p->p.getTasks().stream())
                 .map(Task::getCreated)
-                .map(n->n.compareTo(LocalDate.now()))
+                .map(n->Period.between(n , LocalDate.now()))
+                .map(n ->n.getDays())
                 .collect(toList());
 
         double result = IntStream.range(0,tasks2.size())
