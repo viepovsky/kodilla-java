@@ -1,4 +1,4 @@
-package com.kodilla.good.patterns.challenges;
+package com.kodilla.good.patterns.streamExample;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -49,5 +49,11 @@ public class MovieStore {
                 .map(n -> n.replace("]",""))
                 .collect(Collectors.joining("!"));
         System.out.println(text);
+        System.out.print("\n");
+
+        String text1 = moviesMap.entrySet().stream()
+                .flatMap(n -> n.getValue().stream())
+                .collect(Collectors.joining("!"));
+        System.out.println(text1);
     }
 }
