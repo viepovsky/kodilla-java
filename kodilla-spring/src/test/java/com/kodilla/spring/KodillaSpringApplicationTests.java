@@ -16,8 +16,8 @@ class KodillaSpringApplicationTests {
     @Test
     void testCircleLoadedIntoContainer() {
         //Given
-        ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring");
-        Shape shape = context.getBean(Circle.class);
+        ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring.shape");
+        Shape shape = (Shape) context.getBean("circle");
 
         //When
         String name = shape.getShapeName();
@@ -42,7 +42,7 @@ class KodillaSpringApplicationTests {
     void testSquareLoadedIntoContainer() {
         //Given
         ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring.shape");
-        Shape shape = context.getBean(Square.class);
+        Shape shape = (Shape) context.getBean("createSquare");
         //When
         String name = shape.getShapeName();
         //Then
