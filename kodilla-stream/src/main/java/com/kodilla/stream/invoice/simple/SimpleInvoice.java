@@ -14,6 +14,7 @@ public final class SimpleInvoice {
     }
     public double getValueToPay(){
         return items.stream()
+                .filter(n ->n.getProduct().getProductName().length() > 0)
                 .collect(Collectors.summingDouble(SimpleItem::getValue)); //lub item -> item.getValue();
     }
 }
